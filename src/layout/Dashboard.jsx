@@ -1,7 +1,13 @@
-import { Link, NavLink } from "react-router-dom";
+
 import { FaHome } from "react-icons/fa";
+import { NavLink, Outlet } from "react-router-dom";
+import Profile from "../pages/Profile";
+import { FaClipboardList } from "react-icons/fa";
+
 
 const Dashboard = () => {
+
+
   return (
     <div>
       <div className="flex">
@@ -13,27 +19,27 @@ const Dashboard = () => {
             />
           </div>
           <div className="divider px-3"></div>
-          <ul className="menu font-medium text-lg space-y-3">
-            <li>Home</li>
+                  <ul className="menu font-medium text-lg space-y-3">
+                 
+                          <li> <NavLink to="/dashboard/toDoList"><FaClipboardList />To-Do List   </NavLink></li>
+                       
             {/* shared navlinks */}
 
             <div className="divider"></div>
 
             <li>
-              <NavLink to="/">
+            <NavLink to="/">
                 <FaHome></FaHome>Home
               </NavLink>
             </li>
           </ul>
         </div>
 
-        <div className="flex-1 bg-slate-100 pt-32 p-14">
-          <div className="w-full flex justify-end">
-            <Link to="/dashboard/contentManagement/addBlog">
-              <button className="btn btn-ghost bg-amber-400">+ Add Task</button>
-            </Link>
-          </div>
-        </div>
+        
+        <div className="flex-1 bg-slate-100 pt-20 p-14">
+<Profile></Profile>
+        <Outlet></Outlet>
+      </div>
       </div>
     </div>
   );

@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import swal from "sweetalert";
-
+import useAxiosPublic from "../hooks/useAxiosPublic";
 const Registration = () => {
   const { signUp, logOut, setNameAndPhoto } = useContext(AuthContext);
-
+  const axiosPublic = useAxiosPublic();
   //navigate after login
   const navigate = useNavigate();
 
@@ -19,6 +19,11 @@ const Registration = () => {
     const email = form.get("email");
     const password = form.get("password");
 
+    const nameAndEmail = {
+        displayName: name,
+        email: email,
+        image: photo,
+      };
     //checking password validation
     if (password.length < 6) {
       swal("Failed!", "Password should be at least 6 Characters", "error");
@@ -34,7 +39,14 @@ const Registration = () => {
     // create a new user with firebase
     signUp(email, password)
       .then(() => {
-        swal("You're registered!", "Registration Successful!", "success");
+        //create user entry in the database
+        axiosPublic.post("/users", nameAndEmail).then((res) => {
+          if (res.data.insertedId) {
+            console.log("user added to db");
+            // reset();
+            swal("You're registered!", "Registration Successful!", "success");
+          }
+        });
 
         logOut()
           .then(() => {
@@ -58,7 +70,7 @@ const Registration = () => {
   };
 
   return (
-    <div>
+    <div className="pb-24">
       <div className="max-w-screen-xl mx-auto pt-16 text-center">
         <h1 className="text-4xl text-amber-400 font-bold">
           Create a new account
