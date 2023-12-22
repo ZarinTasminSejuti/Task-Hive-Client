@@ -81,7 +81,7 @@ const Navbar = () => {
                   Login
                 </button>
               </Link>
-              <Link to="/register">
+              <Link to="/registration">
                 <button className="btn btn-ghost text-black bg-amber-400 hover:text-white hover:bg-black">
                   Register <FaArrowRightToBracket />
                 </button>

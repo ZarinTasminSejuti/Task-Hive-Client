@@ -30,7 +30,7 @@ const Banner = () => {
 
                 <div className="text-left pl-20 absolute top-56 z-10">
                 <p data-aos="fade-up"
-          data-aos-anchor-placement="bottom-bottom" className="text-gray-600 text-3xl font-semibold mb-3">
+          data-aos-anchor-placement="bottom-bottom" className="text-gray-600 text-4xl font-semibold mb-3">
                   Explore, Collaborate, Achieve with Task Hive!
                 </p>
                   <p data-aos="fade-up"
