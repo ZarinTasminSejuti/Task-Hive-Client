@@ -30,7 +30,7 @@ const UpdateTask = () => {
       };
 
     //send data to the server
-    fetch(`http://localhost:5000/updateTask/${_id}`, {
+    fetch(`https://task-hive-server.vercel.app/updateTask/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -45,7 +45,7 @@ const AddTask = () => {
     };
 
     //send data to the server
-    fetch("http://localhost:5000/addTask", {
+    fetch("https://task-hive-server.vercel.app/addTask", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

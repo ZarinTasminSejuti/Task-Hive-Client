@@ -38,7 +38,7 @@ const router = createBrowserRouter([
       {
         path: "toDoList",
         element: <PrivateRoute><ToDoList></ToDoList></PrivateRoute>,
-        loader: () => fetch("http://localhost:5000/viewTask"),
+        loader: () => fetch("https://task-hive-server.vercel.app/viewTask"),
       },
       {
         path: "addTask",
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
         </PrivateRoute>
       ),
       loader: ({ params }) =>
-        fetch(`http://localhost:5000/updateTask/${params._id}`),
+        fetch(`https://task-hive-server.vercel.app/updateTask/${params._id}`),
     },
     ]
   },
