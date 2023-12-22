@@ -1,6 +1,6 @@
  import { useContext} from "react";
 import { FaArrowRightToBracket } from "react-icons/fa6";
-import { Link, NavLink, useNavigate} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import swal from "sweetalert";
 
@@ -24,19 +24,13 @@ const Navbar = () => {
       });
   };
 
-  const navLinks = (
+  const Links = (
     <>
       <li className="text-lg rounded-xl text-black  hover:bg-amber-400">
-        <NavLink to="/">Home</NavLink>
+        <Link to="/">Home</Link>
       </li>
       <li className="text-lg rounded-xl text-black hover:bg-amber-400">
-        <NavLink to="/addProduct">Add Product</NavLink>
-      </li>
-      <li className="text-lg rounded-xl text-black hover:bg-amber-400">
-        <NavLink to="/myCart">My Cart</NavLink>
-      </li>
-      <li className="text-lg rounded-xl text-black hover:bg-amber-400">
-        <NavLink to="/dashboard">Dashboard</NavLink>
+        <Link to="/dashboard">Dashboard</Link>
       </li>
     </>
   );
@@ -54,7 +48,7 @@ const Navbar = () => {
         </div>
 
         <div className="lg:navbar-center">
-          <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+          <ul className="menu menu-horizontal px-1">{Links}</ul>
         </div>
 
        <div className="lg:w-1/2 flex flex-row justify-end text-white py-2 gap-2">

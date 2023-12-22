@@ -8,6 +8,7 @@ import Registration from "./pages/Registration";
 import AddTask from "./pages/AddTask";
 import PrivateRoute from "./PrivateRoute";
 import ToDoList from "./pages/ToDoList";
+import UpdateTask from "./pages/UpdateTask";
 
 
 const router = createBrowserRouter([
@@ -44,6 +45,16 @@ const router = createBrowserRouter([
         element: <PrivateRoute><AddTask></AddTask></PrivateRoute>,
     
       },
+{ 
+      path: "updateTask/:_id",
+      element: (
+        <PrivateRoute>
+          <UpdateTask></UpdateTask>
+        </PrivateRoute>
+      ),
+      loader: ({ params }) =>
+        fetch(`http://localhost:5000/updateTask/${params._id}`),
+    },
     ]
   },
 ]);

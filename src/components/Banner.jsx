@@ -28,20 +28,20 @@ const Banner = () => {
         
               <div style={overlayStyle}></div>
 
-                <div className="text-left pl-20 absolute top-56 z-10">
+                <div className="text-left pl-5 lg:pl-20 absolute top-12 lg:top-56 z-10">
                 <p data-aos="fade-up"
-          data-aos-anchor-placement="bottom-bottom" className="text-gray-600 text-4xl font-semibold mb-3">
+          data-aos-anchor-placement="bottom-bottom" className="text-gray-600 text-md lg:text-4xl font-semibold mb-3">
                   Explore, Collaborate, Achieve with Task Hive!
                 </p>
                   <p data-aos="fade-up"
-     data-aos-anchor-placement="bottom-bottom" className="text-black font-bold text-5xl lg:text-7xl ">
+     data-aos-anchor-placement="bottom-bottom" className="text-black font-bold text-4xl lg:text-7xl ">
                         Manage your works on <br />     </p>
-                    <p className="font-bold text-7xl mt-5 text-black">Task <span className="text-amber-400">Hive</span></p>
+                    <p className="font-bold text-6xl lg:text-7xl mt-5 text-black">Task <span className="text-amber-400">Hive</span></p>
                     <br />
             
                
                 <p data-aos="fade-up"
-          data-aos-anchor-placement="bottom-bottom" className="text-white w-1/2 text-jus text-2xl font-semibold mb-8">
+          data-aos-anchor-placement="bottom-bottom" className="text-white w-full lg:w-1/2 text-jus text-md lg:text-2xl font-semibold mb-3 lg:mb-8">
                   Our intuitive platform empowers you to organize tasks effortlessly, prioritize effectively, and collaborate seamlessly with your team. 
                 </p>
           
