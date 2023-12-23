@@ -58,7 +58,7 @@ const AddTask = () => {
         if (data.insertedId) {
           swal("Task Added!", "New Task added Successful!", "success");
           form.reset();
-          navigate("/dashboard");
+          navigate("/dashboard/addTask");
          
         }
       })
