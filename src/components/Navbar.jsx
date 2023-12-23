@@ -11,8 +11,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const { logOut, user,userDetails } = useContext(AuthContext);
-  console.log(userDetails);
-
+  
   const handleLogOut = () => {
     logOut()
       .then(() => {
@@ -30,7 +29,13 @@ const Navbar = () => {
         <Link to="/">Home</Link>
       </li>
       <li className="text-lg rounded-xl text-black hover:bg-amber-400">
+        <Link to="/about">About Us</Link>
+      </li>
+      <li className="text-lg rounded-xl text-black hover:bg-amber-400">
         <Link to="/dashboard">Dashboard</Link>
+      </li>
+      <li className="text-lg rounded-xl text-black hover:bg-amber-400">
+        <Link to="/contact">Contact</Link>
       </li>
     </>
   );
@@ -55,12 +60,12 @@ const Navbar = () => {
        {user ? ( 
          <>
            <img
-             src={userDetails[0]?.photoURL}
-             alt={userDetails[0]?.displayName}
+             src={userDetails?.photoURL}
+             alt={userDetails?.displayName}
              className="w-10 rounded"
            />
 
-            <span className="text-black">{userDetails[0]?.displayName}</span> 
+            <span className="text-black">{userDetails?.displayName}</span> 
             <button
              className="btn btn-ghost text-white bg-red-600 hover:bg-black"
              onClick={handleLogOut}

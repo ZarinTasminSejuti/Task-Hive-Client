@@ -13,6 +13,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import app from "../../firebase.config";
 
+
 const auth = getAuth(app);
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
@@ -20,7 +21,7 @@ const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
   const [nameAndPhoto, setNameAndPhoto] = useState({});
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState("");
 
   const signUp = (email, password) => {
     setLoading(true);
@@ -42,11 +43,15 @@ const AuthProvider = ({ children }) => {
   //Update Name after register
   //As per firebase doc user logged in when register complete
   //So updateProfile method need to use to update displayName
-  updateProfile(auth.currentUser, nameAndPhoto)
-    .then()
-    .catch((error) => {
-      console.error(error);
-    });
+  useEffect(() => {
+    if (user) {
+      updateProfile(auth.currentUser, nameAndPhoto)
+        .then(() => {})
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  }, [user, nameAndPhoto]);
 
   //log out authentication
   const logOut = () => {
@@ -54,7 +59,7 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
-  const userDetails = auth.currentUser;
+
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -66,7 +71,7 @@ const AuthProvider = ({ children }) => {
       unSubscribe();
     };
   }, []);
-
+  const userDetails = auth.currentUser;
   const authInfo = {
     signIn,
     signInGoogle,

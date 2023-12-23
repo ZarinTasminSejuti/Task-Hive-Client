@@ -16,7 +16,7 @@ const Contact = () => {
     };
 
     //send data to the server
-    fetch("https://red-drop-server-two.vercel.app/contact", {
+    fetch("https://task-hive-server.vercel.app/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

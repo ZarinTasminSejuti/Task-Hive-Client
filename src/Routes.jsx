@@ -9,6 +9,8 @@ import AddTask from "./pages/AddTask";
 import PrivateRoute from "./PrivateRoute";
 import ToDoList from "./pages/ToDoList";
 import UpdateTask from "./pages/UpdateTask";
+import Contact from "./components/Contact";
+import About from "./pages/About";
 
 
 const router = createBrowserRouter([
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
       },
       {
         path: "/registration",
