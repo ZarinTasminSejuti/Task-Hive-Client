@@ -21,7 +21,7 @@ const Login = () => {
       .then(() => {
         swal("You're logged in!", "Login Successful!", "success");
         e.target.reset();
-        navigate("/");
+        navigate("/dashboard");
       })
       .catch(() => {
         swal(

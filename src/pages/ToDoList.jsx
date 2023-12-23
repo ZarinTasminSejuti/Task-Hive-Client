@@ -18,8 +18,8 @@ const ToDoList = () => {
               <h1 className="text-4xl font-semibold text-center pb-10">
                 All New Task
               </h1>
-              {/* All Tasks field */}
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 px-5 lg:px-0 mb-20 rounded-md ">
+              {/* All Tasks field section */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 px-5 lg:px-0 mb-20 rounded-md bg-slate-200 max-h-fit">
                 {TaskCollection.map((Task, index) => (
                   <div key={index + 1}>
                     <div className="h-[320px] flex flex-col justify-between p-5">
@@ -47,8 +47,21 @@ const ToDoList = () => {
                        
                   </div>
                 ))}
-              </div>
-            
+        </div>
+        
+
+        {/* Ongoing task section  */}
+        <h1 className="text-4xl font-semibold text-center mb-10 bg-slate-200">
+               Ongoing Task
+        </h1>
+        
+
+
+
+{/* Completed task section  */}
+        <h1 className="text-4xl font-semibold text-center pb-10 bg-slate-200">
+                Completed Task
+              </h1>
           </div>
         </div>
      

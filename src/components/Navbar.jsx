@@ -1,8 +1,8 @@
  import { useContext} from "react";
 import { FaArrowRightToBracket } from "react-icons/fa6";
 import { Link, useNavigate} from "react-router-dom";
-import { AuthContext } from "../providers/AuthProvider";
 import swal from "sweetalert";
+import { AuthContext } from "../providers/AuthProvider";
 
 
 const Navbar = () => {
@@ -11,7 +11,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const { logOut, user,userDetails } = useContext(AuthContext);
-
+  console.log(userDetails);
 
   const handleLogOut = () => {
     logOut()
@@ -51,16 +51,16 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{Links}</ul>
         </div>
 
-       <div className="lg:w-1/2 flex flex-row justify-end text-white py-2 gap-2">
+       <div className="lg:w-1/2 flex flex-row justify-end py-2 gap-2">
        {user ? ( 
          <>
            <img
-             src={userDetails.photoURL}
-             alt={userDetails.displayName}
+             src={userDetails[0]?.photoURL}
+             alt={userDetails[0]?.displayName}
              className="w-10 rounded"
            />
 
-            <span className="text-white">{userDetails.displayName}</span> 
+            <span className="text-black">{userDetails[0]?.displayName}</span> 
             <button
              className="btn btn-ghost text-white bg-red-600 hover:bg-black"
              onClick={handleLogOut}
