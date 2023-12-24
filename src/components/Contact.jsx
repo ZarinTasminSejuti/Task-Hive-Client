@@ -1,5 +1,7 @@
 import swal from "sweetalert";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const Contact = () => {
   const handleContact = (event) => {
     event.preventDefault();
@@ -39,18 +41,25 @@ const Contact = () => {
       });
   };
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
+
   return (
     <div className="bg-cover mt-24 lg:mt-72 bg-no-repeat bg-amber-400">
       <div
         className="max-w-screen-xl mx-auto flex flex-col lg:flex-row justify-between py-20 text-center  h-[150px] items-center mb-16 lg:mb-[380px]"
         id="contact"
       >
-        <div className="">
+        <div className="" data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom">
           <p className="text-5xl lg:text-7xl text-white font-semibold ">Contact us</p>
         </div>
 
         {/* contact us field  */}
-        <div className="text-center w-full lg:w-1/2 my-16 lg:my-0 lg:p-20 rounded text-white bg-slate-50 top-0 right-0 shadow-md">
+        <div className="text-center w-full lg:w-1/2 my-16 lg:my-0 lg:p-20 rounded text-white bg-slate-50 top-0 right-0 shadow-md" data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom">
           <form onSubmit={handleContact}>
             <fieldset className="form-control ">
               <label className="label">

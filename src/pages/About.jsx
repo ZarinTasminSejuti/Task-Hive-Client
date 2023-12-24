@@ -13,7 +13,7 @@ const About = () => {
       <div className="hero mt-56 lg:mt-36 bg-gradient-to-r from-white to-amber-300">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img
-            src="https://i.ibb.co/HhLJ399/about1.jpg"
+            src="https://i.ibb.co/nLWdPBC/Task-Hive.png"
             className="max-w-sm rounded-lg border-2 border-white border-solid shadow-xl"
             data-aos="zoom-in"
           />
@@ -45,7 +45,7 @@ const About = () => {
           </div>
           <div className="lg:w-3/4">
             <img
-              src="https://i.ibb.co/QcgJtjq/about02.jpg"
+              src="https://i.ibb.co/Lg6LsdT/tech1.jpg"
               className="max-w-sm rounded-lg shadow-xl border-2 border-white border-solid "
               data-aos="zoom-in"
             />

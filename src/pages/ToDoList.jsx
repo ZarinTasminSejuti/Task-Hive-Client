@@ -39,7 +39,7 @@ const ToDoList = () => {
       <div className="w-full text-right">
         <div className="pr-10">
           <Link to="/dashboard/addTask">
-            <button className="btn btn-ghost bg-amber-400">+ Add Task</button>
+            <button className="btn btn-ghost bg-amber-400">+ Create New Task</button>
           </Link>
         </div>
 

@@ -1,4 +1,4 @@
-
+import { FaNoteSticky } from "react-icons/fa6";
 import { FaHome } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import Profile from "../pages/Profile";
@@ -22,7 +22,7 @@ const Dashboard = () => {
                   <ul className="menu font-medium text-lg space-y-3">
                  
                           <li> <NavLink to="/dashboard/toDoList"><FaClipboardList />To-Do List   </NavLink></li>
-                       
+                          <li> <NavLink to="/dashboard/addTask"><FaNoteSticky />Create Task   </NavLink></li>
             {/* shared navlinks */}
 
             <div className="divider"></div>
